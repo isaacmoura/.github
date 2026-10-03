@@ -1,6 +1,6 @@
 {
   "name": "CI .NET da isaacmoura",
-  "description": "Segredos, formatação, build, testes e checagens de PR (título + governança) com os workflows da plataforma.",
+  "description": "Segredos, formatação, build e testes com os workflows da plataforma. Use junto com \"Checagens de PR (isaacmoura)\".",
   "categories": ["C#", "Dotnet"],
   "filePatterns": ["global\\.json$", ".*\\.slnx?$", ".*\\.csproj$"]
 }
