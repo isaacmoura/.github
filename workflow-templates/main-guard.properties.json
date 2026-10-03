@@ -1,0 +1,4 @@
+{
+  "name": "Vigia da main (isaacmoura)",
+  "description": "Abre uma issue quando algo entra na main sem PR ou com CI vermelho (alternativa gratuita à proteção de branch)."
+}

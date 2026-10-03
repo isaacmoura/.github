@@ -1,0 +1,25 @@
+name: 🔧 Tarefa técnica
+description: Trabalho técnico sem mudança visível para o usuário (refatoração, infra, dependências, docs).
+title: "[Tarefa] "
+type: Task
+projects: ["isaacmoura/1"]
+body:
+  - type: textarea
+    id: oque
+    attributes:
+      label: O que fazer
+    validations:
+      required: true
+  - type: textarea
+    id: porque
+    attributes:
+      label: Por quê
+      description: O que melhora ou que risco diminui.
+    validations:
+      required: true
+  - type: textarea
+    id: pronto
+    attributes:
+      label: Critério de pronto
+      value: |
+        - [ ]

@@ -1,0 +1,60 @@
+name: 🐞 Bug
+description: Algo não funciona como deveria.
+title: "[Bug] "
+type: Bug
+projects: ["isaacmoura/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Quanto mais preciso, mais rápido resolvemos.
+        **Dica:** toda resposta de erro das nossas APIs traz um `traceId` (no corpo e no cabeçalho `X-Trace-Id`).
+        Cole aqui: ele leva direto ao trace completo da requisição.
+  - type: dropdown
+    id: ambiente
+    attributes:
+      label: Ambiente
+      options:
+        - Produção
+        - Homologação
+        - Local
+    validations:
+      required: true
+  - type: input
+    id: trace-id
+    attributes:
+      label: TraceId
+      description: Valor de `traceId` da resposta de erro ou do cabeçalho `X-Trace-Id`.
+      placeholder: 9df13c5e0b7a4c1d8e2f3a4b5c6d7e8f
+  - type: input
+    id: modulo
+    attributes:
+      label: Módulo / feature
+      placeholder: "Ex.: Orders / Cancelamento"
+  - type: textarea
+    id: descricao
+    attributes:
+      label: O que aconteceu?
+    validations:
+      required: true
+  - type: textarea
+    id: passos
+    attributes:
+      label: Passos para reproduzir
+      value: |
+        1.
+        2.
+        3.
+    validations:
+      required: true
+  - type: textarea
+    id: esperado
+    attributes:
+      label: O que era esperado?
+    validations:
+      required: true
+  - type: textarea
+    id: evidencias
+    attributes:
+      label: Evidências
+      description: Prints, logs, payloads. Sem dados pessoais (CPF, nome, telefone) e sem segredos.

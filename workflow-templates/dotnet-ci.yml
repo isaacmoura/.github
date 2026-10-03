@@ -1,0 +1,27 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [$default-branch]
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+
+permissions: {}
+
+jobs:
+  dotnet:
+    uses: isaacmoura/workflows/.github/workflows/dotnet-ci.yml@v1
+    permissions:
+      contents: read
+      packages: read
+
+  pr:
+    if: github.event_name == 'pull_request'
+    uses: isaacmoura/workflows/.github/workflows/pr-checks.yml@v1
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write

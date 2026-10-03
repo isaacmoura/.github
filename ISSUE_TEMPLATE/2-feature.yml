@@ -1,0 +1,41 @@
+name: ✨ Feature
+description: Nova funcionalidade ou melhoria de um produto.
+title: "[Feature] "
+type: Feature
+projects: ["isaacmoura/1"]
+body:
+  - type: textarea
+    id: problema
+    attributes:
+      label: Problema ou necessidade
+      description: Quem precisa, do quê e por quê. Descreva o problema antes da solução.
+    validations:
+      required: true
+  - type: textarea
+    id: proposta
+    attributes:
+      label: Proposta
+      description: Como imaginamos resolver (pode ser rascunho).
+  - type: textarea
+    id: criterios
+    attributes:
+      label: Critérios de aceite
+      value: |
+        - [ ]
+        - [ ]
+    validations:
+      required: true
+  - type: input
+    id: modulo
+    attributes:
+      label: Módulo / feature
+      placeholder: "Ex.: Customers / Cadastro"
+  - type: textarea
+    id: fora-de-escopo
+    attributes:
+      label: Fora de escopo
+      description: O que conscientemente NÃO entra agora.
+  - type: markdown
+    attributes:
+      value: |
+        É algo que só um cliente pediu? Use o formulário **🧩 Customização de cliente**.

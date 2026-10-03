@@ -1,0 +1,55 @@
+name: 🧩 Customização de cliente
+description: Demanda específica de um cliente — classificada antes de virar código.
+title: "[Customização] "
+type: Feature
+projects: ["isaacmoura/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Toda demanda específica de cliente é **classificada antes de virar código**, do nível mais barato para o mais caro:
+
+        1. **Feature oficial** — serve para todos os clientes? Então entra no produto.
+        2. **Configuração do tenant** — parâmetro, layout, prazo, regra simples.
+        3. **Feature flag** — funcionalidade oficial ligada só para alguns tenants.
+        4. **Extensão específica** — código só deste cliente, num ponto de extensão do core (o core não conhece o cliente).
+        5. **Deployment dedicado** — customização muito extensa ou exigência forte de isolamento.
+
+        Proibido como padrão: `if (tenant.Name == "ClienteA")` no core e branches permanentes por cliente.
+  - type: input
+    id: cliente
+    attributes:
+      label: Cliente / tenant
+    validations:
+      required: true
+  - type: textarea
+    id: demanda
+    attributes:
+      label: Demanda
+      description: O que o cliente precisa e por quê.
+    validations:
+      required: true
+  - type: dropdown
+    id: classificacao
+    attributes:
+      label: Classificação proposta
+      options:
+        - 1 — Feature oficial
+        - 2 — Configuração do tenant
+        - 3 — Feature flag
+        - 4 — Extensão específica
+        - 5 — Deployment dedicado
+        - Não sei — precisa de triagem
+    validations:
+      required: true
+  - type: textarea
+    id: justificativa
+    attributes:
+      label: Por que esta classificação?
+  - type: checkboxes
+    id: regras
+    attributes:
+      label: Combinados
+      options:
+        - label: Não será um `if` por cliente no core nem uma branch permanente por cliente.
+          required: true
