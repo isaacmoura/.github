@@ -1,0 +1,4 @@
+{
+  "name": "Checagens de PR (isaacmoura)",
+  "description": "Valida o título do PR (Conventional Commits) e aplica o rótulo de governança. Roda de novo quando o título é editado, sem refazer o build."
+}
