@@ -24,7 +24,7 @@ body:
     id: trace-id
     attributes:
       label: TraceId
-      description: O código para o suporte que aparece na tela de erro, ou o cabeçalho `X-Trace-Id` da resposta. Peça logo — guardamos por 30 dias.
+      description: O código para o suporte que aparece na tela de erro, ou o cabeçalho `X-Trace-Id` da resposta. Guardamos só 30 dias — se outra pessoa viu o erro, peça o código a ela logo.
       placeholder: 9df13c5e0b7a4c1d8e2f3a4b5c6d7e8f
   - type: input
     id: modulo
