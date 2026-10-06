@@ -1,0 +1,96 @@
+name: 🚨 Incidente
+description: Produto fora do ar, com erros ou lento para os usuários — registro, linha do tempo e post-mortem.
+title: "[Incidente] "
+type: Bug
+labels: ["incidente"]
+projects: ["isaacmoura/1"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Abra o incidente no repositório privado **`platform`**, nunca num repositório público.
+        Registre enquanto acontece: esta issue é a linha do tempo oficial. Todos os horários em **horário de Brasília**.
+        Sem dados pessoais (nome, e-mail, CPF, telefone) e sem segredos: para apontar uma requisição, use o traceId.
+  - type: input
+    id: inicio
+    attributes:
+      label: Início (horário de Brasília)
+      description: Quando o problema começou, ou a melhor estimativa.
+      placeholder: "Ex.: 06/10/2026 14:32"
+    validations:
+      required: true
+  - type: input
+    id: fim
+    attributes:
+      label: Fim (horário de Brasília)
+      description: Quando voltou ao normal. Deixe em branco enquanto o incidente estiver em andamento.
+      placeholder: "Ex.: 06/10/2026 15:10"
+  - type: dropdown
+    id: ambiente
+    attributes:
+      label: Ambiente
+      multiple: true
+      options:
+        - Produção
+        - Homologação
+        - Servidor (afeta todos os ambientes)
+    validations:
+      required: true
+  - type: textarea
+    id: impacto
+    attributes:
+      label: Impacto
+      description: Quem foi afetado e o quê — produto, funcionalidade, clientes ou tenants, quantos usuários.
+    validations:
+      required: true
+  - type: textarea
+    id: deteccao
+    attributes:
+      label: Alerta ou como foi percebido
+      description: Nome do alerta que disparou, ou quem percebeu e como (cliente, suporte, teste manual).
+    validations:
+      required: true
+  - type: textarea
+    id: linha-do-tempo
+    attributes:
+      label: Linha do tempo
+      description: Um fato por linha, em horário de Brasília — detecção, decisões, ações e recuperação. Atualize até o fim.
+      value: |
+        - HH:MM —
+    validations:
+      required: true
+  - type: textarea
+    id: trace-ids
+    attributes:
+      label: TraceIds de exemplo
+      description: Códigos para o suporte (ou cabeçalho `X-Trace-Id`) de requisições afetadas, um por linha. Guardamos por 30 dias — cole logo.
+      placeholder: 9df13c5e0b7a4c1d8e2f3a4b5c6d7e8f
+      render: text
+  - type: textarea
+    id: acoes-imediatas
+    attributes:
+      label: Ações imediatas
+      description: O que foi feito para conter ou resolver (rollback, reinício, desligar uma feature flag…) e o que ficou pendente.
+  - type: textarea
+    id: post-mortem
+    attributes:
+      label: Post-mortem
+      description: Curto, em até 5 dias depois do fim. Edite esta issue para preencher e só então feche.
+      value: |
+        **O que houve:**
+
+        **Impacto:**
+
+        **Causa:**
+
+        **Ações:**
+        - [ ]
+  - type: checkboxes
+    id: combinados
+    attributes:
+      label: Combinados
+      options:
+        - label: Sem dados pessoais nem segredos nesta issue.
+          required: true
+        - label: Post-mortem curto em até 5 dias depois do fim (o que houve, impacto, causa, ações).
+          required: true
